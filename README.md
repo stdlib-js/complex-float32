@@ -224,6 +224,21 @@ console.log( 'JSON: %s', JSON.stringify( z ) );
 
 <!-- /.references -->
 
+<!-- Section for related `stdlib` packages. Do not manually edit this section, as it is automatically populated. -->
+
+<section class="related">
+
+* * *
+
+## See Also
+
+-   [`@stdlib/complex/cmplx`][@stdlib/complex/cmplx]: create a complex number.
+-   [`@stdlib/complex/float64`][@stdlib/complex/float64]: 128-bit complex number.
+
+</section>
+
+<!-- /.related -->
+
 <!-- Section for all links. Make sure to keep an empty line after the `section` element and another before the `/section` close. -->
 
 
@@ -288,6 +303,14 @@ Copyright &copy; 2016-2021. The Stdlib [Authors][stdlib-authors].
 [mdn-json-parse]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse
 
 [@stdlib/complex/reviver-float32]: https://github.com/stdlib-js/complex-reviver-float32
+
+<!-- <related-links> -->
+
+[@stdlib/complex/cmplx]: https://github.com/stdlib-js/complex-cmplx
+
+[@stdlib/complex/float64]: https://github.com/stdlib-js/complex-float64
+
+<!-- </related-links> -->
 
 </section>
 
