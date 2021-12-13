@@ -1,7 +1,7 @@
 /**
 * @license Apache-2.0
 *
-* Copyright (c) 2018 The Stdlib Authors.
+* Copyright (c) 2021 The Stdlib Authors.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -16,25 +16,22 @@
 * limitations under the License.
 */
 
-'use strict';
+#include "stdlib/complex/float32.h"
 
 /**
-* 64-bit complex number constructor.
+* Returns a single-precision complex floating-point number.
 *
-* @module @stdlib/complex-float32
+* @param real     real component
+* @param imag     imaginary component
+* @return         single-precision complex floating-point number
 *
 * @example
-* var Complex64 = require( '@stdlib/complex-float32' );
-*
-* var z = new Complex64( 5.0, 3.0 );
-* // returns <Complex64>
+* stdlib_complex64_t z = stdlib_complex64( 5.0f, 2.0f );
 */
+stdlib_complex64_t stdlib_complex64( const float real, const float imag ) {
+	stdlib_complex64_parts_t z;
+	z.parts[ 0 ] = real;
+	z.parts[ 1 ] = imag; // cppcheck-suppress unreadVariable
+	return z.value;
+}
 
-// MODULES //
-
-var main = require( './main.js' );
-
-
-// EXPORTS //
-
-module.exports = main;
