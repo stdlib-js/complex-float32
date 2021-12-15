@@ -20,6 +20,7 @@
 #define STDLIB_COMPLEX_FLOAT32_H
 
 #include <complex.h>
+#include <stdint.h>
 
 /*
 * If C++, prevent name mangling so that the compiler emits a binary file having undecorated names, thus mirroring the behavior of a C compiler.
@@ -104,6 +105,41 @@ typedef union {
 * Returns a single-precision complex floating-point number.
 */
 stdlib_complex64_t stdlib_complex64( const float real, const float imag );
+
+/**
+* Converts a single-precision floating-point number to a single-precision complex floating-point number.
+*/
+stdlib_complex64_t stdlib_complex64_from_float32( const float real );
+
+/**
+* Converts a double-precision floating-point number to a single-precision complex floating-point number.
+*/
+stdlib_complex64_t stdlib_complex64_from_float64( const double real );
+
+/**
+* Converts (copies) a single-precision complex floating-point number to a single-precision complex floating-point number.
+*/
+stdlib_complex64_t stdlib_complex64_from_complex64( const stdlib_complex64_t z );
+
+/**
+* Converts a signed 8-bit integer to a single-precision complex floating-point number.
+*/
+stdlib_complex64_t stdlib_complex64_from_int8( const int8_t real );
+
+/**
+* Converts an unsigned 8-bit integer to a single-precision complex floating-point number.
+*/
+stdlib_complex64_t stdlib_complex64_from_uint8( const uint8_t real );
+
+/**
+* Converts a signed 16-bit integer to a single-precision complex floating-point number.
+*/
+stdlib_complex64_t stdlib_complex64_from_int16( const int16_t real );
+
+/**
+* Converts an unsigned 16-bit integer to a single-precision complex floating-point number.
+*/
+stdlib_complex64_t stdlib_complex64_from_uint16( const uint16_t real );
 
 #ifdef __cplusplus
 }
