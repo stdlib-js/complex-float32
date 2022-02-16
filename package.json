@@ -1,6 +1,6 @@
 {
   "name": "@stdlib/complex-float32",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "64-bit complex number.",
   "license": "Apache-2.0",
   "author": {
