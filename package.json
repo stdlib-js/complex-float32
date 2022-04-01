@@ -1,0 +1,34 @@
+{
+  "name": "@stdlib/complex-float32",
+  "version": "0.0.0",
+  "description": "64-bit complex number.",
+  "license": "Apache-2.0",
+  "main": "./bundle.js",
+  "homepage": "https://stdlib.io",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/stdlib-js/complex-float32.git"
+  },
+  "bugs": {
+    "url": "https://github.com/stdlib-js/stdlib/issues"
+  },
+  "keywords": [
+    "stdlib",
+    "stdtypes",
+    "types",
+    "data",
+    "structure",
+    "complex",
+    "complex64",
+    "64-bit",
+    "float32",
+    "float",
+    "single",
+    "single-precision",
+    "ieee754"
+  ],
+  "funding": {
+    "type": "patreon",
+    "url": "https://www.patreon.com/athan"
+  }
+}
