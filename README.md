@@ -45,38 +45,32 @@ limitations under the License.
 
 <!-- Package usage documentation. -->
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/complex-float32
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
+-   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
-To use in Observable,
-
 ```javascript
-Complex64 = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/complex-float32@umd/browser.js' )
-```
-
-To vendor stdlib functionality and avoid installing dependency trees for Node.js, you can use the UMD server build:
-
-```javascript
-var Complex64 = require( 'path/to/vendor/umd/complex-float32/index.js' )
-```
-
-To include the bundle in a webpage,
-
-```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/complex-float32@umd/browser.js"></script>
-```
-
-If no recognized module system is present, access bundle contents via the global scope:
-
-```html
-<script type="text/javascript">
-(function () {
-    window.Complex64;
-})();
-</script>
+var Complex64 = require( '@stdlib/complex-float32' );
 ```
 
 #### Complex64( real, imag )
@@ -218,13 +212,8 @@ To [revive][mdn-json-parse] a `Complex64` number from a [JSON][json] `string`, s
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/complex-float32@umd/browser.js"></script>
-<script type="text/javascript">
-(function () {
+```javascript
+var Complex64 = require( '@stdlib/complex-float32' );
 
 var z = new Complex64( 3.0, -2.0 );
 
@@ -237,16 +226,11 @@ console.log( 'str: %s', z );
 console.log( 'real: %d', z.re );
 // => 'real: 3'
 
-console.log( 'imag: %d', z.im );
-// => 'imag: -2'
+console.log( 'imaginary: %d', z.im );
+// => 'imaginary: -2'
 
 console.log( 'JSON: %s', JSON.stringify( z ) );
 // => 'JSON: {"type":"Complex64","re":3,"im":-2}'
-
-})();
-</script>
-</body>
-</html>
 ```
 
 </section>
@@ -255,7 +239,289 @@ console.log( 'JSON: %s', JSON.stringify( z ) );
 
 <!-- C interface documentation. -->
 
+* * *
 
+<section class="c">
+
+## C APIs
+
+<!-- Section to include introductory text. Make sure to keep an empty line after the intro `section` element and another before the `/section` close. -->
+
+<section class="intro">
+
+</section>
+
+<!-- /.intro -->
+
+<!-- C usage documentation. -->
+
+<section class="usage">
+
+### Usage
+
+```c
+#include "stdlib/complex/float32.h"
+```
+
+#### stdlib_complex64_t
+
+An opaque type definition for a single-precision complex floating-point number.
+
+```c
+stdlib_complex64_t z = stdlib_complex64( 5.0f, 2.0f );
+```
+
+#### stdlib_complex64_parts_t
+
+An opaque type definition for a union for accessing the real and imaginary parts of a single-precision complex floating-point number.
+
+```c
+float realf( const stdlib_complex64_t z ) {
+    stdlib_complex64_parts_t v;
+
+    // Assign a single-precision complex floating-point number:
+    v.value = z;
+
+    // Extract the real component:
+    float re = v.parts[ 0 ];
+
+    return re;
+}
+
+// ...
+
+// Create a complex number:
+stdlib_complex64_t z = stdlib_complex64( 5.0f, 2.0f );
+
+// ...
+
+// Access the real component:
+float re = realf( z );
+// returns 5.0f
+```
+
+The union has the following members:
+
+-   **value**: `stdlib_complex64_t` single-precision complex floating-point number.
+
+-   **parts**: `float[]` array having the following elements:
+
+    -   **0**: `float` real component.
+    -   **1**: `float` imaginary component.
+
+#### stdlib_complex64( real, imag )
+
+Returns a single-precision complex floating-point number.
+
+```c
+stdlib_complex64_t z = stdlib_complex64( 5.0f, 2.0f );
+```
+
+The function accepts the following arguments:
+
+-   **real**: `[in] float` real component.
+-   **imag**: `[in] float` imaginary component.
+
+```c
+stdlib_complex64_t stdlib_complex64( const float real, const float imag );
+```
+
+#### stdlib_complex64_from_float32( real )
+
+Converts a single-precision floating-point number to a single-precision complex floating-point number.
+
+```c
+stdlib_complex64_t z = stdlib_complex64_from_float32( 5.0f );
+```
+
+The function accepts the following arguments:
+
+-   **real**: `[in] float` real component.
+
+```c
+stdlib_complex64_t stdlib_complex64_from_float32( const float real );
+```
+
+#### stdlib_complex64_from_float64( real )
+
+Converts a double-precision floating-point number to a single-precision complex floating-point number.
+
+```c
+stdlib_complex64_t z = stdlib_complex64_from_float64( 5.0 );
+```
+
+The function accepts the following arguments:
+
+-   **real**: `[in] double` real component.
+
+```c
+stdlib_complex64_t stdlib_complex64_from_float64( const double real );
+```
+
+#### stdlib_complex64_from_complex64( z )
+
+Converts (copies) a single-precision complex floating-point number to a single-precision complex floating-point number.
+
+```c
+stdlib_complex64_t z1 = stdlib_complex64( 5.0f, 3.0f );
+stdlib_complex64_t z2 = stdlib_complex64_from_complex64( z1 );
+```
+
+The function accepts the following arguments:
+
+-   **z**: `[in] stdlib_complex64_t` single-precision complex floating-point number.
+
+```c
+stdlib_complex64_t stdlib_complex64_from_complex64( const stdlib_complex64_t z );
+```
+
+#### stdlib_complex64_from_int8( real )
+
+Converts a signed 8-bit integer to a single-precision complex floating-point number.
+
+```c
+stdlib_complex64_t z = stdlib_complex64_from_int8( 5 );
+```
+
+The function accepts the following arguments:
+
+-   **real**: `[in] int8_t` real component.
+
+```c
+stdlib_complex64_t stdlib_complex64_from_int8( const int8_t real );
+```
+
+#### stdlib_complex64_from_uint8( real )
+
+Converts an unsigned 8-bit integer to a single-precision complex floating-point number.
+
+```c
+stdlib_complex64_t z = stdlib_complex64_from_uint8( 5 );
+```
+
+The function accepts the following arguments:
+
+-   **real**: `[in] uint8_t` real component.
+
+```c
+stdlib_complex64_t stdlib_complex64_from_uint8( const uint8_t real );
+```
+
+#### stdlib_complex64_from_int16( real )
+
+Converts a signed 16-bit integer to a single-precision complex floating-point number.
+
+```c
+stdlib_complex64_t z = stdlib_complex64_from_int16( 5 );
+```
+
+The function accepts the following arguments:
+
+-   **real**: `[in] int16_t` real component.
+
+```c
+stdlib_complex64_t stdlib_complex64_from_int16( const int16_t real );
+```
+
+#### stdlib_complex64_from_uint16( real )
+
+Converts an unsigned 16-bit integer to a single-precision complex floating-point number.
+
+```c
+stdlib_complex64_t z = stdlib_complex64_from_uint16( 5 );
+```
+
+The function accepts the following arguments:
+
+-   **real**: `[in] uint16_t` real component.
+
+```c
+stdlib_complex64_t stdlib_complex64_from_uint16( const uint16_t real );
+```
+
+</section>
+
+<!-- /.usage -->
+
+<!-- C API usage notes. Make sure to keep an empty line after the `section` element and another before the `/section` close. -->
+
+<section class="notes">
+
+</section>
+
+<!-- /.notes -->
+
+<!-- C API usage examples. -->
+
+<section class="examples">
+
+### Examples
+
+```c
+#include "stdlib/complex/float32.h"
+#include <stdint.h>
+#include <stdio.h>
+
+/**
+* Return the real component of a single-precision complex floating-point number.
+*
+* @param z    complex number
+* @return     real component
+*/
+static float real( const stdlib_complex64_t z ) {
+    stdlib_complex64_parts_t v;
+
+    // Assign a single-precision complex floating-point number:
+    v.value = z;
+
+    // Extract the real component:
+    float re = v.parts[ 0 ];
+
+    return re;
+}
+
+/**
+* Return the imaginary component of a single-precision complex floating-point number.
+*
+* @param z    complex number
+* @return     imaginary component
+*/
+static float imag( const stdlib_complex64_t z ) {
+    stdlib_complex64_parts_t v;
+
+    // Assign a single-precision complex floating-point number:
+    v.value = z;
+
+    // Extract the imaginary component:
+    float im = v.parts[ 1 ];
+
+    return im;
+}
+
+int main( void ) {
+    const stdlib_complex64_t x[] = {
+        stdlib_complex64( 5.0f, 2.0f ),
+        stdlib_complex64( -2.0f, 1.0f ),
+        stdlib_complex64( 0.0f, -0.0f ),
+        stdlib_complex64( 0.0f/0.0f, 0.0f/0.0f )
+    };
+
+    stdlib_complex64_t v;
+    int i;
+    for ( i = 0; i < 4; i++ ) {
+        v = x[ i ];
+        printf( "%f + %fi\n", real( v ), imag( v ) );
+    }
+}
+```
+
+</section>
+
+<!-- /.examples -->
+
+</section>
+
+<!-- /.c -->
 
 <!-- Section to include cited references. If references are included, add a horizontal rule *before* the section. Make sure to keep an empty line after the `section` element and another before the `/section` close. -->
 
@@ -274,7 +540,7 @@ console.log( 'JSON: %s', JSON.stringify( z ) );
 ## See Also
 
 -   <span class="package-name">[`@stdlib/complex-cmplx`][@stdlib/complex/cmplx]</span><span class="delimiter">: </span><span class="description">create a complex number.</span>
--   <span class="package-name">[`@stdlib/complex-float64`][@stdlib/complex/float64]</span><span class="delimiter">: </span><span class="description">128-bit complex number.</span>
+-   <span class="package-name">[`@stdlib/complex-float64/ctor`][@stdlib/complex/float64/ctor]</span><span class="delimiter">: </span><span class="description">128-bit complex number.</span>
 
 </section>
 
@@ -358,13 +624,13 @@ Copyright &copy; 2016-2024. The Stdlib [Authors][stdlib-authors].
 
 [mdn-json-parse]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse
 
-[@stdlib/complex/float32/reviver]: https://github.com/stdlib-js/complex-float32-reviver/tree/umd
+[@stdlib/complex/float32/reviver]: https://github.com/stdlib-js/complex-float32-reviver
 
 <!-- <related-links> -->
 
-[@stdlib/complex/cmplx]: https://github.com/stdlib-js/complex-cmplx/tree/umd
+[@stdlib/complex/cmplx]: https://github.com/stdlib-js/complex-cmplx
 
-[@stdlib/complex/float64]: https://github.com/stdlib-js/complex-float64/tree/umd
+[@stdlib/complex/float64/ctor]: https://github.com/stdlib-js/complex-float64-ctor
 
 <!-- </related-links> -->
 
