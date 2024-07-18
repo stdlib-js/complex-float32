@@ -2,7 +2,7 @@
 
 @license Apache-2.0
 
-Copyright (c) 2018 The Stdlib Authors.
+Copyright (c) 2024 The Stdlib Authors.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -33,223 +33,85 @@ limitations under the License.
 
 [![NPM version][npm-image]][npm-url] [![Build Status][test-image]][test-url] [![Coverage Status][coverage-image]][coverage-url] <!-- [![dependencies][dependencies-image]][dependencies-url] -->
 
-> 64-bit complex number.
+> Single-precision complex floating-point number functions.
 
-<!-- Section to include introductory text. Make sure to keep an empty line after the intro `section` element and another before the `/section` close. -->
+<section class="installation">
 
-<section class="intro">
+## Installation
+
+```bash
+npm install @stdlib/complex-float32
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
+-   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
 
 </section>
-
-<!-- /.intro -->
-
-<!-- Package usage documentation. -->
-
-
 
 <section class="usage">
 
 ## Usage
 
 ```javascript
-import Complex64 from 'https://cdn.jsdelivr.net/gh/stdlib-js/complex-float32@esm/index.mjs';
+var complex = require( '@stdlib/complex-float32' );
 ```
 
-#### Complex64( real, imag )
+#### complex
 
-64-bit complex number constructor, where `real` and `imag` are the **real** and **imaginary** components, respectively.
+Namespace containing single-precision complex floating-point number functions.
 
 ```javascript
-var z = new Complex64( 5.0, 3.0 );
-// returns <Complex64>
+var ns = complex;
+// returns {...}
 ```
 
-* * *
+The namespace contains the following functions:
 
-## Properties
+<!-- <toc pattern="*"> -->
 
-#### Complex64.BYTES_PER_ELEMENT
-
-Size (in bytes) of each component.
-
-```javascript
-var nbytes = Complex64.BYTES_PER_ELEMENT;
-// returns 4
-```
-
-#### Complex64.prototype.BYTES_PER_ELEMENT
-
-Size (in bytes) of each component.
-
-```javascript
-var z = new Complex64( 5.0, 3.0 );
-
-var nbytes = z.BYTES_PER_ELEMENT;
-// returns 4
-```
-
-#### Complex64.prototype.byteLength
-
-Length (in bytes) of a complex number.
-
-```javascript
-var z = new Complex64( 5.0, 3.0 );
-
-var nbytes = z.byteLength;
-// returns 8
-```
-
-### Instance
-
-A `Complex64` instance has the following properties...
-
-#### re
-
-A **read-only** property returning the **real** component.
-
-```javascript
-var z = new Complex64( 5.0, 3.0 );
-
-var re = z.re;
-// returns 5.0
-```
-
-#### im
-
-A **read-only** property returning the **imaginary** component.
-
-```javascript
-var z = new Complex64( 5.0, -3.0 );
-
-var im = z.im;
-// returns -3.0
-```
-
-* * *
-
-## Methods
-
-### Accessor Methods
-
-These methods do **not** mutate a `Complex64` instance and, instead, return a complex number representation.
-
-#### Complex64.prototype.toString()
-
-Returns a `string` representation of a `Complex64` instance.
-
-```javascript
-var z = new Complex64( 5.0, 3.0 );
-var str = z.toString();
-// returns '5 + 3i'
-
-z = new Complex64( -5.0, -3.0 );
-str = z.toString();
-// returns '-5 - 3i'
-```
-
-#### Complex64.prototype.toJSON()
-
-Returns a [JSON][json] representation of a `Complex64` instance. [`JSON.stringify()`][mdn-json-stringify] implicitly calls this method when stringifying a `Complex64` instance.
-
-```javascript
-var z = new Complex64( 5.0, -3.0 );
-
-var o = z.toJSON();
-/*
-  {
-    "type": "Complex64",
-    "re": 5.0,
-    "im": -3.0
-  }
-*/
-```
-
-To [revive][mdn-json-parse] a `Complex64` number from a [JSON][json] `string`, see [@stdlib/complex/float32/reviver][@stdlib/complex/float32/reviver].
+<!-- </toc> -->
 
 </section>
 
 <!-- /.usage -->
 
-* * *
-
-<!-- Package usage notes. Make sure to keep an empty line after the `section` element and another before the `/section` close. -->
+<!-- Package notes. Make sure to keep an empty line after the `section` element and another before the `/section` close. -->
 
 <section class="notes">
-
-## Notes
-
--   Both the **real** and **imaginary** components are stored as single-precision floating-point numbers.
 
 </section>
 
 <!-- /.notes -->
 
-* * *
-
-<!-- Package usage examples. -->
-
 <section class="examples">
 
 ## Examples
 
+<!-- TODO: better examples -->
+
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="module">
+```javascript
+var objectKeys = require( '@stdlib/utils-keys' );
+var ns = require( '@stdlib/complex-float32' );
 
-import Complex64 from 'https://cdn.jsdelivr.net/gh/stdlib-js/complex-float32@esm/index.mjs';
-
-var z = new Complex64( 3.0, -2.0 );
-
-console.log( 'type: %s', typeof z );
-// => 'type: object'
-
-console.log( 'str: %s', z );
-// => 'str: 3 - 2i'
-
-console.log( 'real: %d', z.re );
-// => 'real: 3'
-
-console.log( 'imaginary: %d', z.im );
-// => 'imaginary: -2'
-
-console.log( 'JSON: %s', JSON.stringify( z ) );
-// => 'JSON: {"type":"Complex64","re":3,"im":-2}'
-
-</script>
-</body>
-</html>
+console.log( objectKeys( ns ) );
 ```
 
 </section>
 
 <!-- /.examples -->
 
-<!-- C interface documentation. -->
-
-
-
-<!-- Section to include cited references. If references are included, add a horizontal rule *before* the section. Make sure to keep an empty line after the `section` element and another before the `/section` close. -->
-
-<section class="references">
-
-</section>
-
-<!-- /.references -->
-
 <!-- Section for related `stdlib` packages. Do not manually edit this section, as it is automatically populated. -->
 
 <section class="related">
-
-* * *
-
-## See Also
-
--   <span class="package-name">[`@stdlib/complex-cmplx`][@stdlib/complex/cmplx]</span><span class="delimiter">: </span><span class="description">create a complex number.</span>
--   <span class="package-name">[`@stdlib/complex-float64/ctor`][@stdlib/complex/float64/ctor]</span><span class="delimiter">: </span><span class="description">128-bit complex number.</span>
 
 </section>
 
@@ -264,7 +126,7 @@ console.log( 'JSON: %s', JSON.stringify( z ) );
 
 ## Notice
 
-This package is part of [stdlib][stdlib], a standard library with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
+This package is part of [stdlib][stdlib], a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
@@ -327,21 +189,9 @@ Copyright &copy; 2016-2024. The Stdlib [Authors][stdlib-authors].
 
 [stdlib-license]: https://raw.githubusercontent.com/stdlib-js/complex-float32/main/LICENSE
 
-[json]: http://www.json.org/
+<!-- <toc-links> -->
 
-[mdn-json-stringify]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify
-
-[mdn-json-parse]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse
-
-[@stdlib/complex/float32/reviver]: https://github.com/stdlib-js/complex-float32-reviver/tree/esm
-
-<!-- <related-links> -->
-
-[@stdlib/complex/cmplx]: https://github.com/stdlib-js/complex-cmplx/tree/esm
-
-[@stdlib/complex/float64/ctor]: https://github.com/stdlib-js/complex-float64-ctor/tree/esm
-
-<!-- </related-links> -->
+<!-- </toc-links> -->
 
 </section>
 
