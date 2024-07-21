@@ -35,38 +35,32 @@ limitations under the License.
 
 > Single-precision complex floating-point number functions.
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/complex-float32
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
+-   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
-To use in Observable,
-
 ```javascript
-complex = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/complex-float32@umd/browser.js' )
-```
-
-To vendor stdlib functionality and avoid installing dependency trees for Node.js, you can use the UMD server build:
-
-```javascript
-var complex = require( 'path/to/vendor/umd/complex-float32/index.js' )
-```
-
-To include the bundle in a webpage,
-
-```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/complex-float32@umd/browser.js"></script>
-```
-
-If no recognized module system is present, access bundle contents via the global scope:
-
-```html
-<script type="text/javascript">
-(function () {
-    window.complex;
-})();
-</script>
+var complex = require( '@stdlib/complex-float32' );
 ```
 
 #### complex
@@ -78,9 +72,33 @@ var ns = complex;
 // returns {...}
 ```
 
+The namespace contains the following sub-namespaces:
+
+<!-- <toc pattern="+(base)"> -->
+
+<div class="namespace-toc">
+
+-   <span class="signature">[`base`][@stdlib/complex/float32/base]</span><span class="delimiter">: </span><span class="description">base (i.e., lower-level) single-precision complex floating-point number functions.</span>
+
+</div>
+
+<!-- </toc> -->
+
 The namespace contains the following functions:
 
 <!-- <toc pattern="*"> -->
+
+<div class="namespace-toc">
+
+-   <span class="signature">[`conj( z )`][@stdlib/complex/float32/conj]</span><span class="delimiter">: </span><span class="description">return the complex conjugate of a single-precision complex floating-point number.</span>
+-   <span class="signature">[`Complex64( real, imag )`][@stdlib/complex/float32/ctor]</span><span class="delimiter">: </span><span class="description">64-bit complex number.</span>
+-   <span class="signature">[`imag( z )`][@stdlib/complex/float32/imag]</span><span class="delimiter">: </span><span class="description">return the imaginary component of a single-precision complex floating-point number.</span>
+-   <span class="signature">[`parseComplex64( str )`][@stdlib/complex/float32/parse]</span><span class="delimiter">: </span><span class="description">parse a string representation of a 64-bit complex number.</span>
+-   <span class="signature">[`real( z )`][@stdlib/complex/float32/real]</span><span class="delimiter">: </span><span class="description">return the real component of a single-precision complex floating-point number.</span>
+-   <span class="signature">[`reim( z )`][@stdlib/complex/float32/reim]</span><span class="delimiter">: </span><span class="description">return the real and imaginary components of a single-precision complex floating-point number.</span>
+-   <span class="signature">[`reviveComplex64( key, value )`][@stdlib/complex/float32/reviver]</span><span class="delimiter">: </span><span class="description">revive a JSON-serialized 64-bit complex number.</span>
+
+</div>
 
 <!-- </toc> -->
 
@@ -104,21 +122,11 @@ The namespace contains the following functions:
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/utils-keys@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/complex-float32@umd/browser.js"></script>
-<script type="text/javascript">
-(function () {
+```javascript
+var objectKeys = require( '@stdlib/utils-keys' );
+var ns = require( '@stdlib/complex-float32' );
 
 console.log( objectKeys( ns ) );
-
-})();
-</script>
-</body>
-</html>
 ```
 
 </section>
@@ -206,6 +214,22 @@ Copyright &copy; 2016-2024. The Stdlib [Authors][stdlib-authors].
 [stdlib-license]: https://raw.githubusercontent.com/stdlib-js/complex-float32/main/LICENSE
 
 <!-- <toc-links> -->
+
+[@stdlib/complex/float32/conj]: https://github.com/stdlib-js/complex-float32-conj
+
+[@stdlib/complex/float32/ctor]: https://github.com/stdlib-js/complex-float32-ctor
+
+[@stdlib/complex/float32/imag]: https://github.com/stdlib-js/complex-float32-imag
+
+[@stdlib/complex/float32/parse]: https://github.com/stdlib-js/complex-float32-parse
+
+[@stdlib/complex/float32/real]: https://github.com/stdlib-js/complex-float32-real
+
+[@stdlib/complex/float32/reim]: https://github.com/stdlib-js/complex-float32-reim
+
+[@stdlib/complex/float32/reviver]: https://github.com/stdlib-js/complex-float32-reviver
+
+[@stdlib/complex/float32/base]: https://github.com/stdlib-js/complex-float32-base
 
 <!-- </toc-links> -->
 
