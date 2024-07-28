@@ -42,13 +42,13 @@ limitations under the License.
 ## Usage
 
 ```javascript
-import complex from 'https://cdn.jsdelivr.net/gh/stdlib-js/complex-float32@esm/index.mjs';
+import complex from 'https://cdn.jsdelivr.net/gh/stdlib-js/complex-float32@v0.3.0-esm/index.mjs';
 ```
 
 You can also import the following named exports from the package:
 
 ```javascript
-import { Complex64, base, conj, imag, parseComplex64, real, reim, reviveComplex64 } from 'https://cdn.jsdelivr.net/gh/stdlib-js/complex-float32@esm/index.mjs';
+import { Complex64, base, conj, imag, parseComplex64, real, reim, reviveComplex64 } from 'https://cdn.jsdelivr.net/gh/stdlib-js/complex-float32@v0.3.0-esm/index.mjs';
 ```
 
 #### complex
@@ -117,7 +117,7 @@ The namespace contains the following functions:
 <script type="module">
 
 import objectKeys from 'https://cdn.jsdelivr.net/gh/stdlib-js/utils-keys@esm/index.mjs';
-import ns from 'https://cdn.jsdelivr.net/gh/stdlib-js/complex-float32@esm/index.mjs';
+import ns from 'https://cdn.jsdelivr.net/gh/stdlib-js/complex-float32@v0.3.0-esm/index.mjs';
 
 console.log( objectKeys( ns ) );
 
