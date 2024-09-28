@@ -3,8 +3,30 @@
   "version": "0.3.0",
   "description": "Single-precision complex number functions.",
   "license": "Apache-2.0",
-  "type": "module",
-  "main": "./mod.js",
+  "author": {
+    "name": "The Stdlib Authors",
+    "url": "https://github.com/stdlib-js/stdlib/graphs/contributors"
+  },
+  "contributors": [
+    {
+      "name": "The Stdlib Authors",
+      "url": "https://github.com/stdlib-js/stdlib/graphs/contributors"
+    }
+  ],
+  "main": "lib/index.js",
+  "directories": {
+    "doc": "./docs",
+    "example": "./examples",
+    "lib": "./lib",
+    "test": "./test"
+  },
+  "types": "./docs/types",
+  "scripts": {
+    "test": "make test",
+    "test-cov": "make test-cov",
+    "examples": "make examples",
+    "benchmark": "make benchmark"
+  },
   "homepage": "https://stdlib.io",
   "repository": {
     "type": "git",
@@ -13,6 +35,72 @@
   "bugs": {
     "url": "https://github.com/stdlib-js/stdlib/issues"
   },
+  "dependencies": {
+    "@stdlib/complex-float32-base": "^0.1.1",
+    "@stdlib/complex-float32-conj": "^0.1.1",
+    "@stdlib/complex-float32-ctor": "^0.0.2",
+    "@stdlib/complex-float32-imag": "^0.1.1",
+    "@stdlib/complex-float32-parse": "^0.0.2",
+    "@stdlib/complex-float32-real": "^0.1.1",
+    "@stdlib/complex-float32-reim": "^0.1.2",
+    "@stdlib/complex-float32-reviver": "^0.0.2",
+    "@stdlib/utils-define-read-only-property": "^0.2.2"
+  },
+  "devDependencies": {
+    "@stdlib/array-filled-by": "^0.2.1",
+    "@stdlib/array-float32": "^0.2.2",
+    "@stdlib/assert-has-own-property": "^0.2.2",
+    "@stdlib/assert-is-array-like": "^0.2.2",
+    "@stdlib/assert-is-boolean": "^0.2.2",
+    "@stdlib/assert-is-complex64": "^0.2.2",
+    "@stdlib/assert-is-number": "^0.2.2",
+    "@stdlib/assert-is-same-complex64": "^0.2.2",
+    "@stdlib/assert-is-string": "^0.2.2",
+    "@stdlib/complex-float32-base-add": "^0.1.0",
+    "@stdlib/complex-float32-base-assert": "^0.1.1",
+    "@stdlib/complex-float32-base-assert-is-equal": "^0.1.1",
+    "@stdlib/complex-float32-base-assert-is-not-equal": "^0.1.1",
+    "@stdlib/complex-float32-base-assert-is-same-value": "^0.1.1",
+    "@stdlib/complex-float32-base-assert-is-same-value-zero": "^0.0.1",
+    "@stdlib/complex-float32-base-mul": "^0.1.0",
+    "@stdlib/constants-float32-ninf": "^0.2.2",
+    "@stdlib/constants-float32-pinf": "^0.2.2",
+    "@stdlib/math-base-assert-is-nan": "^0.2.2",
+    "@stdlib/math-base-assert-is-nanf": "^0.2.2",
+    "@stdlib/number-float32-base-assert-is-same-value": "^0.2.2",
+    "@stdlib/number-float32-base-assert-is-same-value-zero": "^0.2.1",
+    "@stdlib/number-float64-base-to-float32": "^0.2.2",
+    "@stdlib/random-base-discrete-uniform": "^0.2.1",
+    "@stdlib/random-base-randu": "^0.2.1",
+    "@stdlib/random-base-uniform": "^0.2.1",
+    "@stdlib/string-base-replace": "^0.2.2",
+    "@stdlib/error-tools-fmtprodmsg": "^0.2.2",
+    "@stdlib/utils-copy": "^0.2.2",
+    "@stdlib/utils-define-nonenumerable-read-only-property": "^0.2.2",
+    "@stdlib/utils-define-property": "^0.2.4",
+    "@stdlib/utils-keys": "^0.2.2",
+    "@stdlib/utils-parse-json": "^0.2.2",
+    "@stdlib/utils-try-require": "^0.2.2",
+    "tape": "git+https://github.com/kgryte/tape.git#fix/globby",
+    "istanbul": "^0.4.1",
+    "tap-min": "git+https://github.com/Planeshifter/tap-min.git",
+    "@stdlib/bench-harness": "^0.2.2"
+  },
+  "engines": {
+    "node": ">=0.10.0",
+    "npm": ">2.7.0"
+  },
+  "os": [
+    "aix",
+    "darwin",
+    "freebsd",
+    "linux",
+    "macos",
+    "openbsd",
+    "sunos",
+    "win32",
+    "windows"
+  ],
   "keywords": [
     "stdlib",
     "stdtypes",
