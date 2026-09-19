@@ -4,12 +4,15 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2026-07-30)
+## Unreleased (2026-09-19)
 
 <section class="features">
 
 ### Features
 
+-   [`59e0278`](https://github.com/stdlib-js/stdlib/commit/59e02788851cc22cc83595c34275d268f6f68c90) - update `complex/float32/base` TypeScript declarations [(#13931)](https://github.com/stdlib-js/stdlib/pull/13931)
+-   [`1f6aa3d`](https://github.com/stdlib-js/stdlib/commit/1f6aa3dd999f22c5aaca539c41d01bc4614b1a5a) - add `div` to namespace
+-   [`b423804`](https://github.com/stdlib-js/stdlib/commit/b423804f3fe422a29dc82c8043e20317706b6df8) - add `complex/float32/base/div` [(#9371)](https://github.com/stdlib-js/stdlib/pull/9371)
 -   [`a921830`](https://github.com/stdlib-js/stdlib/commit/a921830140c2ed2909d462864a21890615f6e082) - update `complex/float32/base` TypeScript declarations [(#11112)](https://github.com/stdlib-js/stdlib/pull/11112)
 -   [`40a9690`](https://github.com/stdlib-js/stdlib/commit/40a9690b3cc701abfe2063cf4c1cf055582bed35) - add `muladd` to namespace
 -   [`ad16f6a`](https://github.com/stdlib-js/stdlib/commit/ad16f6a74846cb072d4b5fe2ac95f38ef3005c19) - add `add3` to namespace
@@ -48,6 +51,12 @@ This release closes the following issue:
 
 <details>
 
+-   [`3d19e26`](https://github.com/stdlib-js/stdlib/commit/3d19e26c5ac90f6e1902ee773e06728fe7d0ec6d) - **chore:** clean-up [(#13914)](https://github.com/stdlib-js/stdlib/pull/13914) _(by Philipp Burckhardt)_
+-   [`59e0278`](https://github.com/stdlib-js/stdlib/commit/59e02788851cc22cc83595c34275d268f6f68c90) - **feat:** update `complex/float32/base` TypeScript declarations [(#13931)](https://github.com/stdlib-js/stdlib/pull/13931) _(by stdlib-bot)_
+-   [`879f1c8`](https://github.com/stdlib-js/stdlib/commit/879f1c8c38558b441ceed6b0d086e0a715a81c99) - **docs:** update namespace table of contents [(#13932)](https://github.com/stdlib-js/stdlib/pull/13932) _(by stdlib-bot)_
+-   [`1f6aa3d`](https://github.com/stdlib-js/stdlib/commit/1f6aa3dd999f22c5aaca539c41d01bc4614b1a5a) - **feat:** add `div` to namespace _(by Athan Reines)_
+-   [`b423804`](https://github.com/stdlib-js/stdlib/commit/b423804f3fe422a29dc82c8043e20317706b6df8) - **feat:** add `complex/float32/base/div` [(#9371)](https://github.com/stdlib-js/stdlib/pull/9371) _(by Pratik, Athan Reines, Karan Anand)_
+-   [`7ae11bc`](https://github.com/stdlib-js/stdlib/commit/7ae11bca9e05607a14425d165dfed57584b880b8) - **chore:** clean-up [(#13834)](https://github.com/stdlib-js/stdlib/pull/13834) _(by Philipp Burckhardt)_
 -   [`10ee0a5`](https://github.com/stdlib-js/stdlib/commit/10ee0a56ed60ae3d051ff0426b8e203a29c44cdc) - **chore:** clean-up [(#13754)](https://github.com/stdlib-js/stdlib/pull/13754) _(by Philipp Burckhardt)_
 -   [`f30fe01`](https://github.com/stdlib-js/stdlib/commit/f30fe0156a585359cbaac81f385926458ed7f26e) - **refactor:** simplify strided array type signatures [(#13128)](https://github.com/stdlib-js/stdlib/pull/13128) _(by Karan Anand)_
 -   [`83bfd15`](https://github.com/stdlib-js/stdlib/commit/83bfd159fa82bb3fd5d2d46e2eeb597fc7fb7a47) - **fix:** fix and unify complex parsing logic [(#13069)](https://github.com/stdlib-js/stdlib/pull/13069) _(by Abdul Kaium, Athan Reines)_
@@ -74,12 +83,13 @@ This release closes the following issue:
 
 ### Contributors
 
-A total of 6 people contributed to this release. Thank you to the following contributors:
+A total of 7 people contributed to this release. Thank you to the following contributors:
 
 -   Abdul Kaium
 -   Athan Reines
 -   Karan Anand
 -   Philipp Burckhardt
+-   Pratik
 -   Sachin Pangal
 -   anee3
 
